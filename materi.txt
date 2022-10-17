@@ -1,0 +1,71 @@
+Apa itu laravel ? 
+“Laravel is a web application framework with
+expressive, elegant syntax.”
+
+Web Application Framework
+Sebuah ‘kerangka’ yang didesain untuk mendukung pembangunan
+aplikasi web
+● Menyediakan standar / cara untuk membangun aplikasi web
+● Bertujuan untuk mengotomasi hal-hal umum yang biasanya dilakukan
+saat membangun aplikasi web
+● Contohnya: database library, templating engine, session management,
+authentication, security, dll
+
+Ragam Web Application Framework
+● UI Framework
+● Frontend Framework
+● Backend Framework
+
+UI Framework
+● Bootstrap
+● Tailwind
+● Materialize
+
+Frontend Framework
+● Angular
+● React
+● Vue
+● Ember
+
+Backend Framework
+● Spring (Java)
+● Django (Python)
+● Express (NodeJS)
+● Laravel (PHP)
+
+
+Dibuat oleh Taylor Otwell
+● Juni 2011
+● Sebagai alternatif framework
+untuk CodeIgniter
+● Versi terbarunya versi 8
+
+Filosofi Laravel
+“We believe development must be an enjoyable, creative
+experience to be truly fulfilling.”
+
+Tujuan Laravel
+“Laravel aims to make the development process a pleasing
+one for the developer without sacrificing application
+functionality. Happy developers make the best code. ”
+
+Fitur utama pada Laravel
+● MVC
+● Templating Engine
+● Artisan Console
+● Eloquent ORM
+● Authentication & Authorization
+● Testing
+● Packaging System
+● Multiple File System
+● Task Scheduling
+● Websocket Programming
+
+Website dibuat dengan Laravel
+awwwards.com/websites/laravel
+
+Pre-requisite
+● PHP Dasar
+● Object Oriented PHP
+● Konsep MVC
+
