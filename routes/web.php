@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,75 +31,6 @@ Route::get('/about', function () {
 });
 
 
-Route::get('/blog', function () {
-    $blog_posts = [
-        [
-            "title"     => "Judul Post Pertama",
-            "slug"      => "judul-post-pertama",
-            "author"    => "Gilang Dwi",
-            "body"      => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-            Est aut atque dignissimos explicabo asperiores distinctio minus facilis id beatae magnam 
-            exercitationem illum recusandae laudantium consequatur, dolorem quod qui sunt culpa harum voluptatum 
-            quaerat doloremque! Commodi nemo tenetur, quas veritatis qui facilis sapiente quod eaque, ex quisquam fugiat, quam laudantium! 
-            Illo impedit, quam doloribus blanditiis at hic deleniti aliquid cum quidem cupiditate, harum sapiente, reiciendis repellendus.
-            Numquam perspiciatis nobis assumenda enim sit rerum ab ipsa nemo, dicta distinctio, suscipit accusantium eligendi?"
-        ],
-        [
-            "title"     => "Judul Post Kedua",
-            "slug"      => "judul-post-kedua",
-            "author"    => "Gilang Adira",
-            "body"      => "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium quam tempora eius, vitae optio ducimus deserunt aliquam sapiente sequi 
-            explicabo sed rem vero! Exercitationem, beatae praesentium delectus excepturi facilis a autem veniam odit explicabo numquam suscipit 
-            distinctio sit dignissimos. Ab impedit perspiciatis rerum sit, deserunt nam vitae eos praesentium maiores? Maxime perspiciatis minima itaque
-            incidunt quis delectus placeat cum quidem libero nobis harum possimus tempora numquam explicabo, ratione non, vel corrupti doloribus commodi
-            laboriosam vero culpa dolor a assumenda. Delectus odit harum earum consequatur ipsam! 
-            Ab hic quisquam iure et? Optio quas odit a neque veniam dolorem voluptatem fugiat autem."
-        ],
-    ];
+Route::get('/blog', [PostController::class, 'index']);
 
-
-    return view('posts', [
-        "title" => "Posts",
-        "posts" => $blog_posts
-    ]);
-});
-
-// halaman single post
-route::get('posts/{slug}', function($slug){
-    $blog_posts = [
-        [
-            "title"     => "Judul Post Pertama",
-            "slug"      => "judul-post-pertama",
-            "author"    => "Gilang Dwi",
-            "body"      => "Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-            Est aut atque dignissimos explicabo asperiores distinctio minus facilis id beatae magnam 
-            exercitationem illum recusandae laudantium consequatur, dolorem quod qui sunt culpa harum voluptatum 
-            quaerat doloremque! Commodi nemo tenetur, quas veritatis qui facilis sapiente quod eaque, ex quisquam fugiat, quam laudantium! 
-            Illo impedit, quam doloribus blanditiis at hic deleniti aliquid cum quidem cupiditate, harum sapiente, reiciendis repellendus.
-            Numquam perspiciatis nobis assumenda enim sit rerum ab ipsa nemo, dicta distinctio, suscipit accusantium eligendi?"
-        ],
-        [
-            "title"     => "Judul Post Kedua",
-            "slug"      => "judul-post-kedua",
-            "author"    => "Gilang Adira",
-            "body"      => "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium quam tempora eius, vitae optio ducimus deserunt aliquam sapiente sequi 
-            explicabo sed rem vero! Exercitationem, beatae praesentium delectus excepturi facilis a autem veniam odit explicabo numquam suscipit 
-            distinctio sit dignissimos. Ab impedit perspiciatis rerum sit, deserunt nam vitae eos praesentium maiores? Maxime perspiciatis minima itaque
-            incidunt quis delectus placeat cum quidem libero nobis harum possimus tempora numquam explicabo, ratione non, vel corrupti doloribus commodi
-            laboriosam vero culpa dolor a assumenda. Delectus odit harum earum consequatur ipsam! 
-            Ab hic quisquam iure et? Optio quas odit a neque veniam dolorem voluptatem fugiat autem."
-        ],
-    ];
-
-    $new_post = [];
-    foreach($blog_posts as $post) {
-        if($post["slug"] === $slug) {
-            $new_post = $post;
-        }
-    }
-    
-    return view('post', [
-        "title" => "Single Post",
-        "post" => $new_post
-    ]);
-});
+Route::get('posts/{slug}', [PostController::class, 'show']);
