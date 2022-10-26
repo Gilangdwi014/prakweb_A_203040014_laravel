@@ -8,7 +8,7 @@
 
   {!! $post->body !!}
     <br>
-    <a href="/blog">Kembali</a>
+    <a href="/posts">Kembali</a>
 
 @endsection
 
